@@ -1,0 +1,54 @@
+#define INCL_WINSYS             /*   System values (and colors)       */
+#define INCL_WINSTDDLGS         /*   OS/2 Standard Dialog definitions */
+#define INCL_NLS                /*   DBCS window manager definition   */
+#include <Os2.H>
+#include "AscTbl.Ids"
+ 
+HELPTABLE ID_ASCTBL
+BEGIN
+ HELPITEM ID_ASCTBL           ,ID_ASCTBL           ,ID_ASCTBL
+ HELPITEM ID_MAINWINDOW       ,ID_ASCTBL           ,ID_ASCTBL
+END
+ 
+HELPSUBTABLE ID_ASCTBL
+BEGIN
+ HELPSUBITEM  ID_ASCTBL               , ID_ASCTBL
+END
+ 
+STRINGTABLE PRELOAD MOVEABLE
+BEGIN
+ 0                       , "-1:00000 (R) GPF VERSION 2.1"
+END
+ 
+ 
+ICON   	ID_MAINWINDOW	PRELOAD D:\Develop\ascii\AscTbl.Ico
+ 
+WINDOWTEMPLATE ID_MAINWINDOW PRELOAD
+BEGIN
+  FRAME    "  ASCII Table",
+           ID_MAINWINDOW,60,40,120,164,
+           WS_VISIBLE | WS_SYNCPAINT | WS_CLIPSIBLINGS | WS_SAVEBITS | FS_DLGBORDER ,
+           FCF_SYSMENU | FCF_TITLEBAR | FCF_MINBUTTON 
+   BEGIN
+    WINDOW   "",FID_CLIENT,0,0,0,0,"MainWindow",WS_VISIBLE
+             PRESPARAMS PP_FONTNAMESIZE,"XX.System Monospaced"
+             PRESPARAMS PP_BACKGROUNDCOLORINDEX,CLR_PALEGRAY
+             PRESPARAMS PP_FOREGROUNDCOLORINDEX,CLR_BLACK
+     BEGIN
+      CONTROL "",
+               ID_LISTBOX,6,2,104,132,WC_LISTBOX,
+               WS_VISIBLE | WS_TABSTOP | WS_GROUP 
+               PRESPARAMS PP_FONTNAMESIZE,"XX.System Monospaced"
+      CONTROL "Dec  Hex  Chr",
+               ID_STATICTEXT,8,134,90,10,WC_STATIC,
+               WS_VISIBLE | SS_TEXT | DT_CENTER | DT_VCENTER 
+               PRESPARAMS PP_FONTNAMESIZE,"XX.System Monospaced"
+     END
+   END
+END
+ 
+ICON   	2	PRELOAD MOVEABLE  D:\GPF\BITMAP\GPFDUMMY.ICO
+BITMAP 	2	PRELOAD MOVEABLE  D:\GPF\BITMAP\GPFDUMMY.BMP
+ICON   	ID_ASCIITABLEICON	PRELOAD MOVEABLE  D:\Develop\ascii\AscTbl.Ico
+ 
+

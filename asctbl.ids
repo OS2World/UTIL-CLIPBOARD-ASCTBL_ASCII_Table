@@ -1,0 +1,6 @@
+#define ID_ASCTBL                      	10000	/* Appl Id    */ /* 0x2710 */
+#define ID_MAINWINDOW                  	10003	/* MainWindow */ /* 0x2713 */
+#define ID_LISTBOX                     	10004	/* Control    */ /* 0x2714 */
+#define ID_STATICTEXT                  	10005	/* Control    */ /* 0x2715 */
+#define ID_ASCIITABLEICON              	10020	/* IconBitMap */ /* 0x2724 */
+
